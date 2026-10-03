@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Stock Flow — Control de Inventario y Ventas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="logo-icon">📦</span>
+        <span class="logo-text">Simple Stock Flow</span>
+      </div>
+      <nav class="nav">
+        <a href="#features">Características</a>
+        <a href="#architecture">Arquitectura Onion</a>
+        <a href="#tech-stack">Tecnologías</a>
+        <a href="#ecosystem">Ecosistema</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="badge-hero">Prueba Técnica ADSO-3413974 · SENA</div>
+      <h1>Control de Stock y Ventas para Almacén</h1>
+      <p class="hero-subtitle">
+        Diseñado bajo <strong>Spec-Driven Development (SDD)</strong> y <strong>Arquitectura Onion de 4 Anillos</strong> en PHP 8.2 (Laravel 11), React 19 y Docker. Garantiza inmutabilidad contable, concurrencia optimista y exactitud monetaria.
+      </p>
+      <div class="hero-actions">
+        <a href="http://localhost:8080" target="_blank" class="btn btn-hero">Acceder a la Aplicación</a>
+        <a href="#architecture" class="btn btn-outline">Ver Arquitectura</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars Section -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Las 3 Afirmaciones Fundamentales</h2>
+        <p>Invariantes innegociables del sistema sobre las cuales descansa toda la lógica de negocio.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>1. El stock visible es el stock real</h3>
+          <p>Control de concurrencia optimista con versionado atómico y transacciones que impiden sobreventas simultáneas.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>2. Venta registrada es inmutable</h3>
+          <p>Una vez confirmada una venta, los precios, nombres y categorías quedan congelados para siempre.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>3. Reportes históricos estables</h3>
+          <p>El reporte de un período cerrado dice hoy lo mismo que dirá dentro de diez años, inmune a cambios del catálogo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Section -->
+  <section id="architecture" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Arquitectura Onion (4 Anillos + Bootstrap)</h2>
+        <p>Aislamiento total del Dominio respecto a Laravel, frameworks y bases de datos.</p>
+      </div>
+
+      <div class="onion-diagram">
+        <div class="onion-ring ring-presentation">
+          <div class="ring-label">Presentation (HTTP Controllers, Requests, Formatos RFC 7807)</div>
+          <div class="onion-ring ring-application">
+            <div class="ring-label">Application (Casos de Uso, DTOs, Puertos Inbound y Outbound)</div>
+            <div class="onion-ring ring-domain">
+              <div class="ring-label">Domain (PHP 8.2 Puro, Entidades, Value Objects Money/Quantity)</div>
+            </div>
+          </div>
+        </div>
+        <div class="ring-infrastructure">
+          Infrastructure (Modelos Eloquent, Mappers, Repositorios, JWT, FileStorage) ➔ Bootstrap
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="tech-stack" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Stack Tecnológico</h2>
+        <p>Herramientas modernas elegidas para máxima reproducibilidad, seguridad y rendimiento.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="tech-card">
+          <h4>PHP 8.2 + Laravel 11</h4>
+          <p>Núcleo Backend con Aritmética de Alta Precisión (Brick\Math).</p>
+        </div>
+        <div class="tech-card">
+          <h4>React 19 + TypeScript</h4>
+          <p>Frontend SPA reactivo con Point of Sale y Catálogo.</p>
+        </div>
+        <div class="tech-card">
+          <h4>MySQL 8.4 LTS</h4>
+          <p>Esquema estricto con 21 restricciones de integridad y 13 índices.</p>
+        </div>
+        <div class="tech-card">
+          <h4>Docker Compose</h4>
+          <p>Orquestación reproducible con un solo comando para todo el sistema.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>Simple Stock Flow · SENA — Formación Titulada ADSO (Ficha 3413974)</p>
+      <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 6px;">Construido bajo el estándar Spec-Driven Development (SDD).</p>
+    </div>
+  </footer>
+</body>
+</html>

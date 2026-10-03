@@ -1,0 +1,271 @@
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --dark: #0f172a;
+  --light-bg: #f8fafc;
+  --text: #334155;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff;
+  padding: 90px 0;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.badge-hero {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-hero {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-hero:hover {
+  background: var(--primary-hover);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Sections */
+.section {
+  padding: 80px 0;
+}
+
+.bg-light {
+  background: var(--light-bg);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 32px 24px;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+/* Onion Diagram */
+.onion-diagram {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.onion-ring {
+  border: 2px dashed #93c5fd;
+  border-radius: 20px;
+  padding: 24px;
+  margin: 12px auto;
+  background: rgba(239, 246, 255, 0.5);
+}
+
+.ring-presentation {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.ring-application {
+  border-color: #60a5fa;
+  background: #dbeafe;
+}
+
+.ring-domain {
+  border-color: #2563eb;
+  background: #bfdbfe;
+  padding: 36px 20px;
+  font-weight: 700;
+}
+
+.ring-label {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1e3a8a;
+}
+
+.ring-infrastructure {
+  margin-top: 16px;
+  padding: 12px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Tech Cards */
+.tech-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.tech-card h4 {
+  font-size: 1.1rem;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
